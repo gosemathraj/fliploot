@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/bg_all_four_red_round_corner"
+    android:padding="@dimen/dp_10dp">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/ic_flash"
+        android:layout_width="@dimen/dp_14dp"
+        android:layout_height="@dimen/dp_14dp"
+        android:src="@drawable/ic_shopping_cart"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:tint="@color/white"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/tv_flash_sale_txt"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Flash sale is live now"
+        android:textSize="@dimen/sp_8sp"
+        android:textColor="@color/white"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/ic_flash"
+        app:layout_constraintTop_toTopOf="@id/ic_flash"
+        app:layout_constraintBottom_toBottomOf="@id/ic_flash"/>
+
+    <LinearLayout
+        android:id="@+id/left_options_linear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="center">
+
+        <com.gosemathraj.fliploot.ui.custom.MontserratMediumTextView
+            android:id="@+id/tv_live"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Live"
+            android:textSize="@dimen/sp_5sp"
+            android:textColor="@color/white"
+            android:paddingTop="@dimen/dp_1dp"
+            android:paddingBottom="@dimen/dp_1dp"
+            android:paddingLeft="@dimen/dp_6dp"
+            android:paddingRight="@dimen/dp_6dp"
+            android:background="@drawable/bg_all_four_borders"
+            android:layout_marginRight="@dimen/dp_8dp"/>
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ic_arrow"
+            android:layout_width="@dimen/dp_14dp"
+            android:layout_height="@dimen/dp_14dp"
+            android:src="@drawable/ic_shopping_cart"
+            app:tint="@color/white"/>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

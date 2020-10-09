@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!--Common sizes-->
+    <dimen name="dp_1dp">@dimen/_1sdp</dimen>
+    <dimen name="dp_2dp">@dimen/_2sdp</dimen>
+    <dimen name="dp_3dp">@dimen/_3sdp</dimen>
+    <dimen name="dp_4dp">@dimen/_4sdp</dimen>
+    <dimen name="dp_5dp">@dimen/_5sdp</dimen>
+    <dimen name="dp_6dp">@dimen/_6sdp</dimen>
+    <dimen name="dp_7dp">@dimen/_7sdp</dimen>
+    <dimen name="dp_8dp">@dimen/_8sdp</dimen>
+    <dimen name="dp_9dp">@dimen/_9sdp</dimen>
+    <dimen name="dp_10dp">@dimen/_10sdp</dimen>
+    <dimen name="dp_12dp">@dimen/_12sdp</dimen>
+    <dimen name="dp_14dp">@dimen/_14sdp</dimen>
+    <dimen name="dp_16dp">@dimen/_16sdp</dimen>
+    <dimen name="dp_18dp">@dimen/_18sdp</dimen>
+    <dimen name="dp_20dp">@dimen/_20sdp</dimen>
+    <dimen name="dp_22dp">@dimen/_22sdp</dimen>
+    <dimen name="dp_24dp">@dimen/_24sdp</dimen>
+    <dimen name="dp_26dp">@dimen/_26sdp</dimen>
+    <dimen name="dp_28dp">@dimen/_28sdp</dimen>
+    <dimen name="dp_30dp">@dimen/_30sdp</dimen>
+    <dimen name="dp_32dp">@dimen/_32sdp</dimen>
+    <dimen name="dp_34dp">@dimen/_34sdp</dimen>
+    <dimen name="dp_36dp">@dimen/_36sdp</dimen>
+    <dimen name="dp_38dp">@dimen/_38sdp</dimen>
+    <dimen name="dp_40dp">@dimen/_40sdp</dimen>
+    <!--Common sizes-->
+
+    <!--Common Sizes-->
+    <dimen name="sp_1sp">@dimen/_1ssp</dimen>
+    <dimen name="sp_2sp">@dimen/_2ssp</dimen>
+    <dimen name="sp_3sp">@dimen/_3ssp</dimen>
+    <dimen name="sp_4sp">@dimen/_4ssp</dimen>
+    <dimen name="sp_5sp">@dimen/_5ssp</dimen>
+    <dimen name="sp_6sp">@dimen/_6ssp</dimen>
+    <dimen name="sp_7sp">@dimen/_7ssp</dimen>
+    <dimen name="sp_8sp">@dimen/_8ssp</dimen>
+    <dimen name="sp_9sp">@dimen/_9ssp</dimen>
+    <dimen name="sp_10sp">@dimen/_10ssp</dimen>
+    <dimen name="sp_12sp">@dimen/_12ssp</dimen>
+    <dimen name="sp_14sp">@dimen/_14ssp</dimen>
+    <dimen name="sp_16sp">@dimen/_16ssp</dimen>
+    <dimen name="sp_18sp">@dimen/_18ssp</dimen>
+    <dimen name="sp_20sp">@dimen/_20ssp</dimen>
+    <dimen name="sp_22sp">@dimen/_22ssp</dimen>
+    <dimen name="sp_24sp">@dimen/_24ssp</dimen>
+    <dimen name="sp_26sp">@dimen/_26ssp</dimen>
+    <dimen name="sp_28sp">@dimen/_28ssp</dimen>
+    <dimen name="sp_30sp">@dimen/_30ssp</dimen>
+    <dimen name="sp_32sp">@dimen/_32ssp</dimen>
+    <dimen name="sp_34sp">@dimen/_34ssp</dimen>
+    <dimen name="sp_36sp">@dimen/_36ssp</dimen>
+    <dimen name="sp_38sp">@dimen/_38ssp</dimen>
+    <dimen name="sp_40sp">@dimen/_40ssp</dimen>
+    <!--Common Sizes-->
+
+    <dimen name="menu_icon_width">@dimen/_14sdp</dimen>
+    <dimen name="menu_icon_height">@dimen/_14sdp</dimen>
+    <dimen name="rating_star_width">12dp</dimen>
+    <dimen name="rating_star_height">12dp</dimen>
+
+</resources>

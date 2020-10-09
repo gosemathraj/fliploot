@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/box1"
+        android:layout_width="@dimen/dp_20dp"
+        android:layout_height="@dimen/dp_24dp"
+        android:text="1"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_all_four_borders"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/box2"
+        android:layout_width="@dimen/dp_20dp"
+        android:layout_height="@dimen/dp_24dp"
+        android:text="2"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/box1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_all_four_borders"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/colon1"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_24dp"
+        android:text=":"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/box2"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/box3"
+        android:layout_width="@dimen/dp_20dp"
+        android:layout_height="@dimen/dp_24dp"
+        android:text="2"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/colon1"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_all_four_borders"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/box4"
+        android:layout_width="@dimen/dp_20dp"
+        android:layout_height="@dimen/dp_24dp"
+        android:text="1"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/box3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_all_four_borders"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/colon2"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/dp_24dp"
+        android:text=":"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/box4"
+        app:layout_constraintTop_toTopOf="parent"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/box5"
+        android:layout_width="@dimen/dp_20dp"
+        android:layout_height="@dimen/dp_24dp"
+        android:text="3"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/colon2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_all_four_borders"/>
+
+    <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+        android:id="@+id/box6"
+        android:layout_width="@dimen/dp_20dp"
+        android:layout_height="@dimen/dp_24dp"
+        android:text="6"
+        android:textSize="@dimen/sp_14sp"
+        android:textColor="@color/red"
+        android:gravity="center"
+        android:layout_marginLeft="@dimen/dp_8dp"
+        app:layout_constraintStart_toEndOf="@id/box5"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_all_four_borders"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

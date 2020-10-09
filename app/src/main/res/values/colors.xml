@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FFFFFF</color>
+    <color name="colorPrimaryDark">#FFFFFF</color>
+    <color name="colorAccent">#03DAC5</color>
+    <color name="black">#000</color>
+    <color name="white">#fff</color>
+
+    <color name="black_20">#33000000</color>
+    <color name="white_20">#33FFFFFF</color>
+    <color name="transparent">#00000000</color>
+
+
+    <color name="blue_grey">#4b636e</color>
+
+    <color name="yellow">#FFC400</color>
+    <color name="red">#B71C1C</color>
+    <color name="blue">#0D47A1</color>
+    <color name="green">#004D40</color>
+    <color name="gray">#9E9E9E</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#4527A0</color>
+    <color name="lime">#827717</color>
+    <color name="brown">#3E2723</color>
+    <color name="teal">#1DE9B6</color>
+
+    <color name="gray_50">#FAFAFA</color>
+    <color name="gray_100">#F5F5F5</color>
+    <color name="gray_200">#EEEEEE</color>
+    <color name="gray_300">#E0E0E0</color>
+    <color name="gray_400">#BDBDBD</color>
+
+    <color name="shade1">#b2dfdb</color>
+    <color name="shade2">#ffcdd2</color>
+    <color name="shade3">#bdbdbd</color>
+    <color name="shade4">#e6ee9c</color>
+    <color name="shade5">#b39ddb</color>
+    <color name="shade6">#fff59d</color>
+    <color name="shade7">#c8e6c9</color>
+    <color name="shade8">#b2ebf2</color>
+    <color name="shade9">#bcaaa4</color>
+    <color name="shade10">#ffcc80</color>
+
+    <color name="shade1_copy">#E57373</color>
+    <color name="shade2_copy">#4DB6AC</color>
+    <color name="shade3_copy">#F06292</color>
+    <color name="shade4_copy">#4FC3F7</color>
+    <color name="shade5_copy">#9575CD</color>
+    <color name="shade6_copy">#DCE775</color>
+    <color name="shade7_copy">#A1887F</color>
+    <color name="shade8_copy">#81C784</color>
+    <color name="shade9_copy">#90A4AE</color>
+    <color name="shade10_copy">#FF8A65</color>
+
+    <color name="color1">#9E9E9E</color>
+    <color name="color2">#795548</color>
+    <color name="color3">#FF5722</color>
+    <color name="color4">#33691E</color>
+    <color name="color5">#E91E63</color>
+    <color name="color6">#9C27B0</color>
+    <color name="color7">#3F51B5</color>
+    <color name="color8">#009688</color>
+    <color name="color9">#FFEB3B</color>
+    <color name="color10">#FF9800</color>
+    <color name="color11">#9E9E9E</color>
+    <color name="color12">#DAF7A6</color>
+    <color name="color13">#00acc1</color>
+    <color name="color14">#8bc34a</color>
+    <color name="color15">#ff8a65</color>
+    <color name="color16">#e040fb</color>
+    <color name="color17">#c5cae9</color>
+    <color name="color18">#512da8 </color>
+    <color name="color19">#009688</color>
+    <color name="color20">#8bc34a</color>
+
+    <color name="bluish_grey">#F4F5F9</color>
+    <color name="black_light">#848484</color>
+    <color name="greyish">#FFFFFF8E</color>
+
+</resources>

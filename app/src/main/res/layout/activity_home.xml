@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--Header-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:background="@color/white"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingRight="@dimen/_12sdp">
+
+            <!--Title-->
+            <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+                android:id="@+id/tv_page_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/sp_10sp"
+                android:textColor="@color/black"
+                android:text="Mens Jeans"
+                tools:text="Mens Shoes"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <!--Title-->
+
+            <!--Menu Icons-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_search"
+                    android:layout_width="@dimen/menu_icon_width"
+                    android:layout_height="@dimen/menu_icon_height"
+                    android:src="@drawable/ic_search"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ic_cart"
+                    android:layout_marginRight="@dimen/_16sdp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_cart"
+                    android:layout_width="@dimen/menu_icon_width"
+                    android:layout_height="@dimen/menu_icon_height"
+                    android:src="@drawable/ic_shopping_cart"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ic_search"
+                    app:layout_constraintEnd_toStartOf="@id/ic_overflow"
+                    android:layout_marginRight="@dimen/_16sdp"/>
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ic_overflow"
+                    android:layout_width="@dimen/menu_icon_width"
+                    android:layout_height="@dimen/menu_icon_height"
+                    android:src="@drawable/ic_more_options"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <!--Menu Icons-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Header-->
+
+        <!--Assured Products Filter-->
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/container_filter"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_toolbar"
+            app:layout_constraintBottom_toTopOf="@id/rv_productslist"
+            android:paddingTop="@dimen/dp_8dp"
+            android:paddingBottom="@dimen/dp_8dp"
+            android:paddingLeft="@dimen/_12sdp"
+            android:paddingRight="@dimen/_12sdp"
+            android:background="@color/bluish_grey">
+
+            <!--Tick Icon-->
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ic_tick"
+                android:layout_width="@dimen/menu_icon_width"
+                android:layout_height="@dimen/menu_icon_height"
+                android:src="@drawable/ic_tick"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"/>
+            <!--Tick Icon-->
+
+            <!--Filter Text-->
+            <com.gosemathraj.fliploot.ui.custom.MontserratLightTextView
+                android:id="@+id/tv_filter_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Show the assured products only"
+                android:textSize="@dimen/sp_8sp"
+                android:textColor="@color/black_light"
+                app:layout_constraintStart_toEndOf="@id/ic_tick"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                android:layout_marginLeft="@dimen/dp_16dp"/>
+            <!--Filter Text-->
+
+            <!--Switch-->
+            <androidx.appcompat.widget.SwitchCompat
+                android:id="@+id/filter_switch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"/>
+            <!--Switch-->
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+        <!--Assured Products Filter-->
+
+        <!--Recyclerview-->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_productslist"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:scrollbars="none"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/container_filter"
+            app:layout_constraintBottom_toBottomOf="parent"/>
+        <!--Recyclerview-->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
