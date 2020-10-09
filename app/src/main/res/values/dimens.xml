@@ -61,5 +61,12 @@
     <dimen name="menu_icon_height">@dimen/_14sdp</dimen>
     <dimen name="rating_star_width">12dp</dimen>
     <dimen name="rating_star_height">12dp</dimen>
+    <dimen name="app_bar_height">350dp</dimen>
+    <dimen name="title_start">48dp</dimen>
+    <dimen name="title_end">64dp</dimen>
+    <dimen name="img_pic_width">96dp</dimen>
+    <dimen name="img_pick_height">96dp</dimen>
+    <dimen name="container_width">250dp</dimen>
+    <dimen name="container_height">200dp</dimen>
 
 </resources>

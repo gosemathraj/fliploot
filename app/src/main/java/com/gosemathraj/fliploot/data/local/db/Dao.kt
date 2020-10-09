@@ -3,9 +3,6 @@ package com.gosemathraj.fliploot.data.local.db
 import androidx.room.*
 import androidx.room.Dao
 import com.gosemathraj.fliploot.data.local.entity.ProductEntity
-import com.gosemathraj.fliploot.data.models.productdetails.Product
-import com.gosemathraj.fliploot.data.models.productdetails.ProductDetails
-import com.gosemathraj.fliploot.data.models.productlist.Products
 
 @Dao
 interface Dao {

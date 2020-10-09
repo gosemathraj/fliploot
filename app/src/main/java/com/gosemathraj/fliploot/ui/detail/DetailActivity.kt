@@ -2,7 +2,6 @@ package com.gosemathraj.fliploot.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
-import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -46,17 +45,17 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
         setObservers()
     }
 
-    private fun setListeners() {
-        img_back_arrow.setOnClickListener {
-            finish()
-        }
-    }
-
     private fun setUp() {
         moreColorsAdapter = MoreColorsAdapter(this, moreColorsList)
         rv_more_colors.apply {
             layoutManager = LinearLayoutManager(this@DetailActivity, LinearLayoutManager.HORIZONTAL, false)
             adapter = moreColorsAdapter
+        }
+    }
+
+    private fun setListeners() {
+        img_back_arrow.setOnClickListener {
+            finish()
         }
     }
 

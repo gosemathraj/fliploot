@@ -15,8 +15,8 @@
 
         <de.hdodenhof.circleimageview.CircleImageView
             android:id="@+id/img_more_colors"
-            android:layout_width="96dp"
-            android:layout_height="96dp"
+            android:layout_width="@dimen/img_pic_width"
+            android:layout_height="@dimen/img_pick_height"
             app:civ_border_width="@dimen/dp_1dp"
             app:civ_border_color="@color/red"
             app:layout_constraintStart_toStartOf="parent"

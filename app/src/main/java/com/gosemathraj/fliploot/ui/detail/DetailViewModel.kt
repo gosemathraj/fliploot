@@ -3,6 +3,7 @@ package com.gosemathraj.fliploot.ui.detail
 import android.content.Context
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
+import com.gosemathraj.fliploot.R
 import com.gosemathraj.fliploot.data.models.productdetails.ProductDetails
 import com.gosemathraj.fliploot.data.remote.api.config.Error
 import com.gosemathraj.fliploot.data.remote.api.config.Resource
@@ -13,7 +14,7 @@ import dagger.hilt.android.qualifiers.ApplicationContext
 
 class DetailViewModel @ViewModelInject constructor(
     private val flipLootRepo: FlipLootRepo,
-    @ApplicationContext private val applicationContext: Context,
+    @ApplicationContext private val context: Context,
     private val networkUtils: NetworkUtils): BaseViewModel() {
 
     var productDetailsLiveData = MutableLiveData<Resource<ProductDetails>>()
@@ -44,7 +45,7 @@ class DetailViewModel @ViewModelInject constructor(
             }
         } else {
             productDetailsLiveData.value = Resource.error(
-                Error(Error.ErrorType.NO_INTERNET_ERROR, "No Internet connection"))
+                Error(Error.ErrorType.NO_INTERNET_ERROR, context.getString(R.string.no_internet_connection)))
         }
     }
 }

@@ -40,7 +40,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 productListAdapter.notifyDataSetChanged()
                 if (assuredFilterList.isEmpty()) {
                     linear_error_screen.visibility = View.VISIBLE
-                    tv_error_message.text = "No Assured Products Found"
+                    tv_error_message.text = getString(R.string.no_assured_products_found)
                 }
             } else {
                 linear_error_screen.visibility = View.GONE
@@ -67,12 +67,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 product.isFavourite = false
                 productListAdapter.notifyDataSetChanged()
                 homeViewModel.removeProduct(product)
-                showToast("Product Removed From Favourite")
+                showToast(getString(R.string.removed_from_favourite))
             } else {
                 product.isFavourite = true
                 productListAdapter.notifyDataSetChanged()
                 homeViewModel.insertProduct(product)
-                showToast("Product Added To Favourite")
+                showToast(getString(R.string.added_to_favourite))
             }
         }
     }
@@ -98,15 +98,15 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                         when (error.errorType) {
                             Error.ErrorType.NO_INTERNET_ERROR -> {
                                 linear_error_screen.visibility = View.VISIBLE
-                                tv_error_message.text = "No Internet Connection"
+                                tv_error_message.text = getString(R.string.no_internet_connection)
                             }
                             Error.ErrorType.GENERAL_ERROR -> {
                                 linear_error_screen.visibility = View.VISIBLE
-                                tv_error_message.text = "Something Went Wrong"
+                                tv_error_message.text = getString(R.string.something_went_wrong)
                             }
                             Error.ErrorType.NETWORK_ERROR -> {
                                 linear_error_screen.visibility = View.VISIBLE
-                                tv_error_message.text = "Something Went Wrong"
+                                tv_error_message.text = getString(R.string.network_error)
                             }
                             else -> error.errorMessage?.let { it1 -> showToast(it1) }
                         }

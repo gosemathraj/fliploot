@@ -4,7 +4,6 @@
     android:id="@+id/tv_available_offers"
     android:layout_width="match_parent"
     android:layout_height="@dimen/dp_32dp"
-    android:text="Available Offers"
     android:textSize="@dimen/sp_10sp"
     android:textColor="@color/black"
     android:gravity="center_vertical"

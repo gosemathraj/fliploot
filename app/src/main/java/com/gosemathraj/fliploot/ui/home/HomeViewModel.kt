@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.viewModelScope
+import com.gosemathraj.fliploot.R
 import com.gosemathraj.fliploot.data.local.LocalDataSource
 import com.gosemathraj.fliploot.data.local.entity.ProductEntity
 import com.gosemathraj.fliploot.data.models.productlist.ProductList
@@ -20,7 +21,7 @@ import kotlinx.coroutines.withContext
 
 class HomeViewModel @ViewModelInject constructor(
     private val flipLootRepo: FlipLootRepo,
-    @ApplicationContext private val applicationContext: Context,
+    @ApplicationContext private val context: Context,
     private val localDataSource: LocalDataSource,
     private val networkUtils: NetworkUtils) : BaseViewModel() {
 
@@ -58,7 +59,7 @@ class HomeViewModel @ViewModelInject constructor(
             }
         } else {
             productListLiveData.value = Resource.error(
-                Error(Error.ErrorType.NO_INTERNET_ERROR, "No Internet connection")
+                Error(Error.ErrorType.NO_INTERNET_ERROR, context.getString(R.string.no_internet_connection))
             )
         }
     }

@@ -37,5 +37,4 @@ class MoreColorsAdapter(val context : Context, var moreColorsList : List<MoreCol
 
     inner class MoreColorsViewHolder(val binding : ItemMoreColorsBinding)
         : RecyclerView.ViewHolder(binding.root)
-
 }

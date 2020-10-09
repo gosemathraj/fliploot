@@ -18,7 +18,7 @@
         <com.google.android.material.appbar.AppBarLayout
                 android:id="@+id/appbar"
                 android:layout_width="match_parent"
-                android:layout_height="350dp"
+                android:layout_height="@dimen/app_bar_height"
                 android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
                 android:fitsSystemWindows="true">
 
@@ -29,8 +29,8 @@
                 app:layout_scrollFlags="scroll|exitUntilCollapsed"
                 android:fitsSystemWindows="true"
                 app:contentScrim="?attr/colorPrimary"
-                app:expandedTitleMarginStart="48dp"
-                app:expandedTitleMarginEnd="64dp">
+                app:expandedTitleMarginStart="@dimen/title_start"
+                app:expandedTitleMarginEnd="@dimen/title_end">
 
                 <ImageView
                     android:id="@+id/backdrop"
@@ -167,7 +167,7 @@
                         <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="INTERNATIONAL"
+                            android:text="@string/international"
                             android:textSize="@dimen/sp_8sp"
                             android:textColor="@color/white"
                             android:layout_marginLeft="@dimen/dp_8dp"/>
@@ -197,7 +197,7 @@
                         <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="ASSURED"
+                            android:text="@string/Assured"
                             android:textSize="@dimen/sp_8sp"
                             android:textColor="@color/white"
                             android:layout_marginLeft="@dimen/dp_8dp"/>
@@ -285,7 +285,7 @@
                     <View
                         android:id="@+id/tv_strikethrough"
                         android:layout_width="0dp"
-                        android:layout_height="1dp"
+                        android:layout_height="@dimen/dp_1dp"
                         app:layout_constraintStart_toStartOf="@id/tv_actual_price"
                         app:layout_constraintEnd_toEndOf="@id/tv_actual_price"
                         app:layout_constraintTop_toTopOf="@id/tv_actual_price"
@@ -336,7 +336,7 @@
                         android:id="@+id/tv_hurryup_sale"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Hurry Up !"
+                        android:text="@string/hurryup"
                         android:textSize="@dimen/sp_12sp"
                         android:textColor="@color/red"
                         app:layout_constraintStart_toStartOf="@id/guideline_begin"
@@ -358,7 +358,7 @@
                         android:id="@+id/tv_price_reduced"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Seller has reduced price of product to ₹ 2367 from 4367"
+                        android:text="@string/seller_price_reduced"
                         android:textSize="@dimen/sp_8sp"
                         android:textColor="@color/red"
                         android:gravity="center"
@@ -385,7 +385,7 @@
                         android:id="@+id/tv_more_colors"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="More Colors"
+                        android:text="@string/more_colors"
                         android:textSize="@dimen/sp_10sp"
                         android:textColor="@color/black"
                         android:gravity="center"
@@ -436,7 +436,7 @@
                         android:id="@+id/tv_product_specification"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_32dp"
-                        android:text="Product Specification"
+                        android:text="@string/product_specification"
                         android:textSize="@dimen/sp_10sp"
                         android:textColor="@color/black"
                         android:gravity="center_vertical"
@@ -463,7 +463,7 @@
                         android:id="@+id/tv_variants"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_32dp"
-                        android:text="Variants"
+                        android:text="@string/variants"
                         android:textSize="@dimen/sp_10sp"
                         android:textColor="@color/black"
                         android:gravity="center_vertical"
@@ -499,7 +499,7 @@
                         android:id="@+id/tv_seller"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_32dp"
-                        android:text="Seller Details"
+                        android:text="@string/seller_details"
                         android:textSize="@dimen/sp_10sp"
                         android:textColor="@color/black"
                         android:gravity="center_vertical"
@@ -547,7 +547,7 @@
                         android:id="@+id/tv_follow"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Follow"
+                        android:text="@string/follow"
                         android:textSize="@dimen/sp_8sp"
                         android:textColor="@color/white"
                         android:paddingLeft="@dimen/dp_8dp"
@@ -567,7 +567,7 @@
                         android:id="@+id/tv_available_offers"
                         android:layout_width="match_parent"
                         android:layout_height="@dimen/dp_32dp"
-                        android:text="Available Offers"
+                        android:text="@string/available_offers"
                         android:textSize="@dimen/sp_10sp"
                         android:textColor="@color/black"
                         android:gravity="center_vertical"
@@ -662,7 +662,7 @@
                             android:layout_width="0dp"
                             android:layout_height="48dp"
                             android:layout_weight="1"
-                            android:text="Bargain and Buy"
+                            android:text="@string/bargain_and_buy"
                             android:textSize="@dimen/sp_8sp"
                             android:textColor="@color/red"
                             android:background="@drawable/bg_pink_gradient_button"
@@ -673,7 +673,7 @@
                             android:layout_width="0dp"
                             android:layout_height="48dp"
                             android:layout_weight="1"
-                            android:text="Add To Cart"
+                            android:text="@string/add_to_cart"
                             android:textSize="@dimen/sp_8sp"
                             android:textColor="@color/white"
                             android:layout_marginLeft="@dimen/dp_4dp"
