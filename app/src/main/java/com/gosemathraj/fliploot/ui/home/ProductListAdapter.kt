@@ -10,7 +10,7 @@ import com.gosemathraj.fliploot.R
 import com.gosemathraj.fliploot.data.models.productlist.Products
 import com.gosemathraj.fliploot.databinding.ItemProductlistBinding
 
-class ProductListAdapter(val context: Context ,var productList : List<Products>, val onCLick : () -> Unit) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
+class ProductListAdapter(val context: Context ,var productList : List<Products>, val onCLick : (type : Int, product : Products) -> Unit) : RecyclerView.Adapter<ProductListAdapter.ProductListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProductListViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -31,6 +31,12 @@ class ProductListAdapter(val context: Context ,var productList : List<Products>,
         holder.binding.tvDiscount.text = "${product.details.variants[0].priceDetails.percentOff.toString()} %Off"
         holder.binding.tvTitle.text = product.details.title
 
+        if (product.isFavourite) {
+            holder.binding.icFav.setBackgroundResource(R.drawable.ic_heart_fav)
+        } else {
+            holder.binding.icFav.setBackgroundResource(R.drawable.ic_heart)
+        }
+
         val rating = product.productRating.toInt()
 
         for (i in 0 until 5) {
@@ -47,9 +53,19 @@ class ProductListAdapter(val context: Context ,var productList : List<Products>,
             holder.binding.root.setBackgroundResource(R.drawable.bg_position_one)
         }
 
-        holder.binding.root.setOnClickListener {
-            onCLick()
+//        holder.binding.imgThumbnail.setOnClickListener {
+//            onCLick(1, product)
+//        }
+
+        holder.binding.containerFavourite.setOnClickListener {
+            onCLick(2, product)
+            if (product.isFavourite) {
+                holder.binding.icFav.setBackgroundResource(R.drawable.ic_heart_fav)
+            } else {
+                holder.binding.icFav.setBackgroundResource(R.drawable.ic_heart)
+            }
         }
+
         holder.binding.executePendingBindings()
     }
 

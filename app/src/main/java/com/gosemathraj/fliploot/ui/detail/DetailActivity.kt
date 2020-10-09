@@ -64,6 +64,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
                     moreColorsList = it.data?.product?.moreColors as ArrayList<MoreColors>
                     moreColorsAdapter.refreshList(moreColorsList)
                     moreColorsAdapter.notifyDataSetChanged()
+                    setBackDropImage(it.data.product.images.mainImages[0])
                     setProductSpecification(it.data?.product.details.productAttributes)
                     setProductVariants(it.data?.product.details.variants)
                     setSellerDetails(it.data.product.sellerDetails)
@@ -76,6 +77,10 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
                 }
             }
         })
+    }
+
+    private fun setBackDropImage(s: String) {
+        Picasso.get().load(s).into(backdrop)
     }
 
     private fun setFooterImages(footer: List<String>) {

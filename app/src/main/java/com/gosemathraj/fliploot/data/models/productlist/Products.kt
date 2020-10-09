@@ -35,5 +35,6 @@ data class Products (
 	@SerializedName("uplodedBy") val uplodedBy : String,
 	@SerializedName("offer") val offer : Int,
 	@SerializedName("loggedInUser") val loggedInUser : LoggedInUser,
-	@SerializedName("productRating") val productRating : Double
+	@SerializedName("productRating") val productRating : Double,
+	var isFavourite : Boolean = false
 ) : Parcelable

@@ -29,15 +29,31 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     }
 
     private fun setUp() {
-        productListAdapter = ProductListAdapter(this, productList) { onItemClick() }
+        productListAdapter = ProductListAdapter(this, productList)
+                                    { type: Int, product: Products -> onItemClick(type, product) }
         rv_productslist.apply {
             layoutManager = GridLayoutManager(this@HomeActivity, 2)
             adapter = productListAdapter
         }
     }
 
-    private fun onItemClick() {
-        openActivity(DetailActivity::class.java)
+    private fun onItemClick(type : Int, product: Products) {
+        if (type == 1) {
+            openActivity(DetailActivity::class.java)
+        } else {
+            homeViewModel.onFavItemClicked(product)
+            if (product.isFavourite) {
+                product.isFavourite = false
+                productListAdapter.notifyDataSetChanged()
+                homeViewModel.removeProduct(product)
+                showToast("Product Removed From Favourite")
+            } else {
+                product.isFavourite = true
+                productListAdapter.notifyDataSetChanged()
+                homeViewModel.insertProduct(product)
+                showToast("Product Added To Favourite")
+            }
+        }
     }
 
     private fun setObservers() {

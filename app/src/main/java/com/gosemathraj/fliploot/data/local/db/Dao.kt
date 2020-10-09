@@ -1,8 +1,9 @@
 package com.gosemathraj.fliploot.data.local.db
 
+import androidx.room.*
 import androidx.room.Dao
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
+import com.gosemathraj.fliploot.data.local.entity.ProductEntity
+import com.gosemathraj.fliploot.data.models.productdetails.Product
 import com.gosemathraj.fliploot.data.models.productdetails.ProductDetails
 import com.gosemathraj.fliploot.data.models.productlist.Products
 
@@ -10,13 +11,14 @@ import com.gosemathraj.fliploot.data.models.productlist.Products
 interface Dao {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertProductList(productList : List<Products>)
+    suspend fun insertProductList(productEntityList : List<ProductEntity>)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun getProductDetails(productDetails: ProductDetails)
+    suspend fun insertProduct(productEntity: ProductEntity)
 
+    @Query("SELECT * FROM productentity")
+    suspend fun getAllProductsList() : List<ProductEntity>
 
-    suspend fun getAllProductsList() : List<Products>
-
-    suspend fun getProductDetails() : ProductDetails
+    @Delete
+    suspend fun removeProduct(productEntity: ProductEntity)
 }
