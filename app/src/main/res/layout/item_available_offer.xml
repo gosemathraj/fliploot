@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
+<com.gosemathraj.fliploot.ui.custom.MontserratMediumTextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/tv_available_offers"
     android:layout_width="match_parent"

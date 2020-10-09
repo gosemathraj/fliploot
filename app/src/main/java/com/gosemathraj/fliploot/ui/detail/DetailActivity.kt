@@ -2,6 +2,7 @@ package com.gosemathraj.fliploot.ui.detail
 
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -10,10 +11,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.gosemathraj.fliploot.R
-import com.gosemathraj.fliploot.data.models.productdetails.MoreColors
-import com.gosemathraj.fliploot.data.models.productdetails.ProductAttributes
-import com.gosemathraj.fliploot.data.models.productdetails.SellerDetails
-import com.gosemathraj.fliploot.data.models.productdetails.Variants
+import com.gosemathraj.fliploot.data.models.productdetails.*
+import com.gosemathraj.fliploot.data.remote.api.config.Error
 import com.gosemathraj.fliploot.data.remote.api.config.Resource
 import com.gosemathraj.fliploot.databinding.ActivityDetailBinding
 import com.gosemathraj.fliploot.ui.base.BaseActivity
@@ -41,8 +40,16 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
         super.onCreate(savedInstanceState)
         dataBinding.lifecycleOwner = this
         dataBinding.vm = detailViewModel
+
         setUp()
+        setListeners()
         setObservers()
+    }
+
+    private fun setListeners() {
+        img_back_arrow.setOnClickListener {
+            finish()
+        }
     }
 
     private fun setUp() {
@@ -64,6 +71,7 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
                     moreColorsList = it.data?.product?.moreColors as ArrayList<MoreColors>
                     moreColorsAdapter.refreshList(moreColorsList)
                     moreColorsAdapter.notifyDataSetChanged()
+                    setProductDetails(it.data)
                     setBackDropImage(it.data.product.images.mainImages[0])
                     setProductSpecification(it.data?.product.details.productAttributes)
                     setProductVariants(it.data?.product.details.variants)
@@ -73,10 +81,30 @@ class DetailActivity : BaseActivity<ActivityDetailBinding>() {
                   }
                 Resource.Status.ERROR -> {
                     finishLoader()
-                    showToast(it.message!!)
+                    it.error?.let { error ->
+                        when (error.errorType) {
+                            Error.ErrorType.NO_INTERNET_ERROR -> {
+                                showToast("No Internet Connection")
+                            }
+                            Error.ErrorType.GENERAL_ERROR -> {
+                                showToast("Something Went Wrong")
+                            }
+                            Error.ErrorType.NETWORK_ERROR -> {
+                                showToast("Something Went Wrong")
+                            }
+                            else -> error.errorMessage?.let { it1 -> showToast(it1) }
+                        }
+                    }
                 }
             }
         })
+    }
+
+    private fun setProductDetails(data: ProductDetails) {
+        tv_price.text = getString(R.string.rupee_symbol) + data.product.details.variants[0].priceDetails.listedPrice.toString()
+        tv_actual_price.text = data.product.details.variants[0].priceDetails.labelPrice.toString()
+        tv_discount.text = data.product.details.variants[0].priceDetails.percentOff.toString() + "%Off"
+        tv_title.text = data.product.details.title
     }
 
     private fun setBackDropImage(s: String) {

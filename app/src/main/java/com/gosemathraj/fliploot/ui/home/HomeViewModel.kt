@@ -8,9 +8,11 @@ import com.gosemathraj.fliploot.data.local.LocalDataSource
 import com.gosemathraj.fliploot.data.local.entity.ProductEntity
 import com.gosemathraj.fliploot.data.models.productlist.ProductList
 import com.gosemathraj.fliploot.data.models.productlist.Products
+import com.gosemathraj.fliploot.data.remote.api.config.Error
 import com.gosemathraj.fliploot.data.remote.api.config.Resource
 import com.gosemathraj.fliploot.data.repo.FlipLootRepo
 import com.gosemathraj.fliploot.ui.base.BaseViewModel
+import com.gosemathraj.fliploot.utils.NetworkUtils
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -19,7 +21,8 @@ import kotlinx.coroutines.withContext
 class HomeViewModel @ViewModelInject constructor(
     private val flipLootRepo: FlipLootRepo,
     @ApplicationContext private val applicationContext: Context,
-    private val localDataSource: LocalDataSource) : BaseViewModel() {
+    private val localDataSource: LocalDataSource,
+    private val networkUtils: NetworkUtils) : BaseViewModel() {
 
     var productListLiveData = MutableLiveData<Resource<ProductList>>()
     var productEntityList = ArrayList<ProductEntity>()
@@ -29,28 +32,34 @@ class HomeViewModel @ViewModelInject constructor(
     }
 
     private fun getProductsList() {
-        launchOnViewModelScope {
-            productListLiveData.value = Resource.loading()
-            apiCall<ProductList>(applicationContext) {
-                onEnqueue = {
-                    flipLootRepo.getAllProductsList()
-                }
-                onSuccess = {
-                    it?.let {
-                        viewModelScope.launch {
-                            productEntityList =
-                                withContext(Dispatchers.Default) { getAllFavourites() } as ArrayList<ProductEntity>
-                            for (product in it.products) {
-                                product.isFavourite = checkIfFavourite(product)
+        if (networkUtils.isNetworkConnected()) {
+            launchOnViewModelScope {
+                productListLiveData.value = Resource.loading()
+                apiCall<ProductList> {
+                    onEnqueue = {
+                        flipLootRepo.getAllProductsList()
+                    }
+                    onSuccess = {
+                        it?.let {
+                            viewModelScope.launch {
+                                productEntityList =
+                                    withContext(Dispatchers.Default) { getAllFavourites() } as ArrayList<ProductEntity>
+                                for (product in it.products) {
+                                    product.isFavourite = checkIfFavourite(product)
+                                }
+                                productListLiveData.value = Resource.success(it)
                             }
-                            productListLiveData.value = Resource.success(it)
                         }
                     }
-                }
-                onError = {
-                    productListLiveData.value = Resource.error(it)
+                    onError = {
+                        productListLiveData.value = Resource.error(it)
+                    }
                 }
             }
+        } else {
+            productListLiveData.value = Resource.error(
+                Error(Error.ErrorType.NO_INTERNET_ERROR, "No Internet connection")
+            )
         }
     }
 

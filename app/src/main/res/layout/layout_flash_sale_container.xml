@@ -10,7 +10,7 @@
         android:id="@+id/ic_flash"
         android:layout_width="@dimen/dp_14dp"
         android:layout_height="@dimen/dp_14dp"
-        android:src="@drawable/ic_shopping_cart"
+        android:src="@drawable/ic_thunder"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -43,20 +43,20 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Live"
-            android:textSize="@dimen/sp_5sp"
+            android:textSize="@dimen/sp_6sp"
             android:textColor="@color/white"
-            android:paddingTop="@dimen/dp_1dp"
-            android:paddingBottom="@dimen/dp_1dp"
-            android:paddingLeft="@dimen/dp_6dp"
-            android:paddingRight="@dimen/dp_6dp"
+            android:paddingTop="@dimen/dp_2dp"
+            android:paddingBottom="@dimen/dp_2dp"
+            android:paddingLeft="@dimen/dp_8dp"
+            android:paddingRight="@dimen/dp_8dp"
             android:background="@drawable/bg_all_four_borders"
             android:layout_marginRight="@dimen/dp_8dp"/>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/ic_arrow"
-            android:layout_width="@dimen/dp_14dp"
-            android:layout_height="@dimen/dp_14dp"
-            android:src="@drawable/ic_shopping_cart"
+            android:layout_width="@dimen/dp_12dp"
+            android:layout_height="@dimen/dp_12dp"
+            android:src="@drawable/ic_right_arrow"
             app:tint="@color/white"/>
 
     </LinearLayout>

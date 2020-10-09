@@ -1,6 +1,7 @@
 package com.gosemathraj.fliploot.ui.home
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
@@ -13,6 +14,7 @@ import com.gosemathraj.fliploot.ui.base.BaseActivity
 import com.gosemathraj.fliploot.ui.detail.DetailActivity
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_home.*
+import com.gosemathraj.fliploot.data.remote.api.config.*
 
 @AndroidEntryPoint
 class HomeActivity : BaseActivity<ActivityHomeBinding>() {
@@ -36,7 +38,12 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 assuredFilterList = productList.filter { it.details.assured == 1 } as ArrayList<Products>
                 productListAdapter.refreshList(assuredFilterList)
                 productListAdapter.notifyDataSetChanged()
+                if (assuredFilterList.isEmpty()) {
+                    linear_error_screen.visibility = View.VISIBLE
+                    tv_error_message.text = "No Assured Products Found"
+                }
             } else {
+                linear_error_screen.visibility = View.GONE
                 productListAdapter.refreshList(productList)
                 productListAdapter.notifyDataSetChanged()
             }
@@ -78,6 +85,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 }
                 Resource.Status.SUCCESS -> {
                     finishLoader()
+                    linear_error_screen.visibility = View.GONE
                     tv_page_title.text = it.data?.pageTitle
                     productList = it.data?.products as ArrayList<Products>
                     productListAdapter.refreshList(productList)
@@ -85,7 +93,24 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 }
                 Resource.Status.ERROR -> {
                     finishLoader()
-                    showToast(it.message!!)
+                    linear_error_screen.visibility = View.VISIBLE
+                    it.error?.let { error ->
+                        when (error.errorType) {
+                            Error.ErrorType.NO_INTERNET_ERROR -> {
+                                linear_error_screen.visibility = View.VISIBLE
+                                tv_error_message.text = "No Internet Connection"
+                            }
+                            Error.ErrorType.GENERAL_ERROR -> {
+                                linear_error_screen.visibility = View.VISIBLE
+                                tv_error_message.text = "Something Went Wrong"
+                            }
+                            Error.ErrorType.NETWORK_ERROR -> {
+                                linear_error_screen.visibility = View.VISIBLE
+                                tv_error_message.text = "Something Went Wrong"
+                            }
+                            else -> error.errorMessage?.let { it1 -> showToast(it1) }
+                        }
+                    }
                 }
             }
         })
