@@ -18,6 +18,7 @@ import com.gosemathraj.fliploot.ui.base.BaseActivity
 import com.squareup.picasso.Picasso
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.activity_detail.*
+import kotlinx.android.synthetic.main.layout_loading.*
 
 @AndroidEntryPoint
 class DetailActivity : BaseActivity<ActivityDetailBinding>() {
