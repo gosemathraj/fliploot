@@ -197,7 +197,7 @@
                         <com.gosemathraj.fliploot.ui.custom.MontserratBoldTextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="@string/Assured"
+                            android:text="@string/assured"
                             android:textSize="@dimen/sp_8sp"
                             android:textColor="@color/white"
                             android:layout_marginLeft="@dimen/dp_8dp"/>
