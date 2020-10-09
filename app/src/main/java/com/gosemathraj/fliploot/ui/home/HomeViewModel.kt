@@ -54,10 +54,6 @@ class HomeViewModel @ViewModelInject constructor(
         }
     }
 
-    fun onFavItemClicked(product: Products) {
-
-    }
-
     fun removeProduct(product: Products) {
         launchOnViewModelScope {
             val productEntity = ProductEntity()

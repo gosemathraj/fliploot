@@ -20,12 +20,27 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
     private val homeViewModel : HomeViewModel by viewModels()
     private lateinit var productListAdapter: ProductListAdapter
     private var productList = ArrayList<Products>()
+    private var assuredFilterList = ArrayList<Products>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         setUp()
+        setListeners()
         setObservers()
+    }
+
+    private fun setListeners() {
+        filter_switch.setOnCheckedChangeListener { buttonView, isChecked ->
+            if (isChecked) {
+                assuredFilterList = productList.filter { it.details.assured == 1 } as ArrayList<Products>
+                productListAdapter.refreshList(assuredFilterList)
+                productListAdapter.notifyDataSetChanged()
+            } else {
+                productListAdapter.refreshList(productList)
+                productListAdapter.notifyDataSetChanged()
+            }
+        }
     }
 
     private fun setUp() {
@@ -41,7 +56,6 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
         if (type == 1) {
             openActivity(DetailActivity::class.java)
         } else {
-            homeViewModel.onFavItemClicked(product)
             if (product.isFavourite) {
                 product.isFavourite = false
                 productListAdapter.notifyDataSetChanged()
@@ -64,6 +78,7 @@ class HomeActivity : BaseActivity<ActivityHomeBinding>() {
                 }
                 Resource.Status.SUCCESS -> {
                     finishLoader()
+                    tv_page_title.text = it.data?.pageTitle
                     productList = it.data?.products as ArrayList<Products>
                     productListAdapter.refreshList(productList)
                     productListAdapter.notifyDataSetChanged()

@@ -53,9 +53,9 @@ class ProductListAdapter(val context: Context ,var productList : List<Products>,
             holder.binding.root.setBackgroundResource(R.drawable.bg_position_one)
         }
 
-//        holder.binding.imgThumbnail.setOnClickListener {
-//            onCLick(1, product)
-//        }
+        holder.binding.root.setOnClickListener {
+            onCLick(1, product)
+        }
 
         holder.binding.containerFavourite.setOnClickListener {
             onCLick(2, product)
